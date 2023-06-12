@@ -15,6 +15,18 @@ public class Fighter {
         return (this.getHealthPoints()>0);
     }
 
+    public boolean isCrit(){
+        return false;
+    }
+
+    public boolean isAvoid(){
+        return false;
+    }
+
+    public boolean isShield(){
+        return false;
+    }
+
     public String getName() {
         return name;
     }

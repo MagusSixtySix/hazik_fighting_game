@@ -6,6 +6,11 @@ public class Warrior extends Fighter{
         this.critChance = critChance;
     }
 
+    @Override
+    public boolean isCrit(){
+        return (this.critChance>=Math.random());
+    }
+
     public double getCritChance() {
         return critChance;
     }
