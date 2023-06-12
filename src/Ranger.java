@@ -2,8 +2,8 @@ public class Ranger extends Fighter {
 
     private double avoidChance;
 
-    public Ranger(String name, double healthPoints, double damagePoints, double avoidChance) {
-        super(name, healthPoints, damagePoints);
+    public Ranger(String name, double healthPoints, double damagePoints, double speed, double avoidChance) {
+        super(name, healthPoints, damagePoints, speed);
         this.avoidChance = avoidChance;
     }
 
