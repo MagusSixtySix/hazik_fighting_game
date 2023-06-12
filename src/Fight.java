@@ -1,50 +1,42 @@
 public class Fight {
-    private static double critMultiplier = 2;
+    private static final double critMultiplier = 2;
 
     public static boolean fighting(Fighter player1, Fighter player2) {
         if (player1.isAlive() && player2.isAlive()){
-            if (player1.getSpeed() > player2.getSpeed()){
-                if (player1.isCrit()){
-                    critDamage(player1, player2);
-                } else {
-                    damageStep(player1, player2);
-                }
-                if (player2.isAlive()){
-                    if (player2.isCrit()){
-                        critDamage(player2, player1);
-                        return true;
-                    } else {
-                        damageStep(player2, player1);
-                        return true;
-                    }
-                }
+            if (player1.initiative() > player2.initiative()){
+                damageStep(player1, player2);
+                return true;
             } else {
-                if (player2.isCrit()){
-                    critDamage(player2, player1);
-                } else {
-                    damageStep(player2, player1);
-                }
-                if (player2.isAlive()){
-                    if (player2.isCrit()){
-                        critDamage(player1, player2);
-                        return true;
-                    } else {
-                        damageStep(player1, player2);
-                        return true;
-                    }
-                }
+                damageStep(player2, player1);
+                return true;
             }
         } return false;
     }
 
-    private static void damageStep(Fighter hero, Fighter enemy){
-        enemy.setHealthPoints(enemy.getHealthPoints()-hero.getDamagePoints());
-        System.out.println(hero.getName()+" ütött! "+enemy.getName()+" maradék élete: "+enemy.getHealthPoints());
+    private static void damageStep(Fighter attacker, Fighter defender){
+        if (attacker.isCrit()){
+            critDamage(attacker, defender);
+        } else {
+            normalDamage(attacker, defender);
+        }
+        if (defender.isAlive()){
+            if (defender.isCrit()){
+                critDamage(defender, attacker);
+            } else {
+                normalDamage(defender, attacker);
+            }
+        }
     }
 
-    private static void critDamage(Fighter hero, Fighter enemy){
-        enemy.setHealthPoints(enemy.getHealthPoints()-(hero.getDamagePoints())*critMultiplier);
-        System.out.println(hero.getName()+" kritikusat ütött! "+enemy.getName()+" maradék élete: "
-                +enemy.getHealthPoints());
+    private static void normalDamage(Fighter attacker, Fighter defender){
+        defender.setHealthPoints(defender.getHealthPoints()-attacker.getDamagePoints());
+        System.out.println(attacker.getName()+" ütött! "+defender.getName()+" maradék élete: "
+                +defender.getHealthPoints());
+    }
+
+    private static void critDamage(Fighter attacker, Fighter defender){
+        defender.setHealthPoints(defender.getHealthPoints()-(attacker.getDamagePoints())*critMultiplier);
+        System.out.println(attacker.getName()+" kritikusat ütött! "+defender.getName()+" maradék élete: "
+                +defender.getHealthPoints());
     }
 }

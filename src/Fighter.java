@@ -15,6 +15,10 @@ public class Fighter {
         return (this.getHealthPoints()>0);
     }
 
+    public double initiative(){
+        return (this.getSpeed()+(Math.random()*10));
+    }
+
     public boolean isCrit(){
         return false;
     }
