@@ -1,11 +1,11 @@
 public class Fighter {
 
     private String name;
-    private double healthPoints;
-    private double damagePoints;
-    private double speed;
+    private int healthPoints;
+    private int damagePoints;
+    private int speed;
 
-    public Fighter(String name, double healthPoints, double damagePoints, double speed) {
+    public Fighter(String name, int healthPoints, int damagePoints, int speed) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.damagePoints = damagePoints;
@@ -15,18 +15,36 @@ public class Fighter {
         return (this.getHealthPoints() > 0);
     }
 
-    public double initiative(){
-        return (this.getSpeed() + (Math.random() * 10));
+    public int initiative(){
+        return (int) (this.getSpeed() + (Math.random() * 10));
     }
 
-    public void takingDamage(double damage){
+    public void takingDamage(int damage){
         this.setHealthPoints(this.getHealthPoints() - damage);
+        if (this.isAlive()){
+            this.printHealtPoints();
+        } else {
+            this.printDead();
+        }
+    }
+
+    public int dealingDamage(){
+        System.out.println(this.getName() + " ütött! Sebzése: " + this.getDamagePoints());
+        return this.getDamagePoints();
+    }
+
+    public void printHealtPoints(){
         System.out.println(this.getName() + " maradék élete: " + this.getHealthPoints());
     }
 
-    public double dealingDamage(){
-        System.out.println(this.getName() + " ütött! Sebzése: " + this.getDamagePoints());
-        return this.getDamagePoints();
+    public void printDead(){
+        System.out.println(this.getName() + " meghalt!");
+    }
+
+    public void printStats(){
+        System.out.print(this.getName() + " egy " + this.getClass().getSimpleName() + " akinek " +
+                this.getHealthPoints() + " élete, " + this.getDamagePoints() + " sebzése, " +
+                this.getSpeed() + " gyorsasága, ");
     }
 
     public String getName() {
@@ -37,27 +55,27 @@ public class Fighter {
         this.name = name;
     }
 
-    public double getHealthPoints() {
+    public int getHealthPoints() {
         return healthPoints;
     }
 
-    public void setHealthPoints(double healthPoints) {
+    public void setHealthPoints(int healthPoints) {
         this.healthPoints = healthPoints;
     }
 
-    public double getDamagePoints() {
+    public int getDamagePoints() {
         return damagePoints;
     }
 
-    public void setDamagePoints(double damagePoints) {
+    public void setDamagePoints(int damagePoints) {
         this.damagePoints = damagePoints;
     }
 
-    public double getSpeed() {
+    public int getSpeed() {
         return speed;
     }
 
-    public void setSpeed(double speed) {
+    public void setSpeed(int speed) {
         this.speed = speed;
     }
 

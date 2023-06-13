@@ -2,8 +2,15 @@ public class Fight {
 
     public static void fighting(Fighter player1, Fighter player2){
         int round = 1;
+        player1.printStats();
+        player2.printStats();
         while (Fight.battlePhase(player1, player2)){
-            System.out.println(round++ + ". kör vége!");
+            System.out.println("------------ " + round++ + ". kör vége! ------------");
+        }
+        if (player1.isAlive()){
+            printVictor(player1);
+        } else {
+            printVictor(player2);
         }
     }
     private static boolean battlePhase(Fighter player1, Fighter player2) {
@@ -22,5 +29,9 @@ public class Fight {
                 }
             }
         } return false;
+    }
+
+    private static void printVictor(Fighter player){
+        System.out.println(player.getName() + " nyerte a küzdelmet! " + player.getHealthPoints() + " élete maradt!");
     }
 }

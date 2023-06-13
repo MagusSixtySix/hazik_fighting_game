@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cbb8138-d48e-48c1-b1e8-ef67c457f05e" name="Changes" comment="Mindhárom kaszt implementálása">
-      <change afterPath="$PROJECT_DIR$/src/CharacterGenerator.java" afterDir="false" />
+    <list default="true" id="0cbb8138-d48e-48c1-b1e8-ef67c457f05e" name="Changes" comment="karakter generátor alapjai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CharacterGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CharacterGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Fighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fighter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ranger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Warrior.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686647442877</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="karakter generátor alapjai">
+      <created>1686652232646</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686652232646</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -109,6 +120,7 @@
     <MESSAGE value="crit implementálása" />
     <MESSAGE value="házi befejezése technikailiag" />
     <MESSAGE value="Mindhárom kaszt implementálása" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mindhárom kaszt implementálása" />
+    <MESSAGE value="karakter generátor alapjai" />
+    <option name="LAST_COMMIT_MESSAGE" value="karakter generátor alapjai" />
   </component>
 </project>

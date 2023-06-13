@@ -1,10 +1,10 @@
 public class Game {
     public static void main(String[] args) {
-    //Warrior player1 = new Warrior("Player1", 120, 20, 5, 42);
-    //Mage player2 = new Mage("Player2", 130, 15, 7,12);
-    Fight.fighting(CharacterGenerator.getRandomFighter(1),
-            CharacterGenerator.getRandomFighter(2));
-
-
+        int numberOfBattles = 10;
+        for (int i = 1; i < (2 * numberOfBattles + 1); i++){
+            System.out.println("\nXXXXXXXXXXXX " + (i/2+1) + ". csata! XXXXXXXXXXXX\n");
+            Fight.fighting(CharacterGenerator.getRandomFighter(i),
+                    CharacterGenerator.getRandomFighter(++i));
+        }
     }
 }

@@ -1,9 +1,9 @@
 public class Mage extends Fighter {
 
     private final double magicShieldChance = 0.35;
-    private double magicShield;
+    private int magicShield;
 
-    public Mage(String name, double healthPoints, double damagePoints, double speed, double magicShield) {
+    public Mage(String name, int healthPoints, int damagePoints, int speed, int magicShield) {
         super(name, healthPoints, damagePoints, speed);
         this.magicShield = magicShield;
     }
@@ -13,22 +13,32 @@ public class Mage extends Fighter {
     }
 
     @Override
-    public void takingDamage(double damage) {
+    public void takingDamage(int damage) {
         if (isMagicShield()){
-            this.setHealthPoints(this.getHealthPoints() - (damage - this.getMagicShield()));
-            System.out.println(this.getName() + " varázslatával részlegesen blokkolta az ütést, ezért " +
-                            this.getMagicShield() + "-el kevesebbet sérült! Maradék élete: " + this.getHealthPoints());
-            return;
-        }
+            this.setHealthPoints (this.getHealthPoints() - (damage - this.getMagicShield()));
+            System.out.print(this.getName() + " varázslatával részlegesen blokkolta az ütést, ezért " +
+                            this.getMagicShield() + " ponttal kevesebbet sérült! ");
+        } else {
         this.setHealthPoints(this.getHealthPoints() - damage);
-        System.out.println(this.getName() + " maradék élete: " + this.getHealthPoints());
+        }
+        if (this.isAlive()){
+            System.out.println(this.getName() + " maradék élete: " + this.getHealthPoints());
+        } else {
+        System.out.println(this.getName() + " meghalt!");
+        }
     }
 
-    public double getMagicShield() {
+    @Override
+    public void printStats() {
+        super.printStats();
+        System.out.println(this.getMagicShield() + " mágikus pajzsa van.");
+    }
+
+    public int getMagicShield() {
         return magicShield;
     }
 
-    public void setMagicShield(double magicShield) {
+    public void setMagicShield(int magicShield) {
         this.magicShield = magicShield;
     }
 
