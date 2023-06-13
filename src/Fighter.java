@@ -12,23 +12,21 @@ public class Fighter {
         this.speed = speed;
     }
     public boolean isAlive(){
-        return (this.getHealthPoints()>0);
+        return (this.getHealthPoints() > 0);
     }
 
     public double initiative(){
-        return (this.getSpeed()+(Math.random()*10));
+        return (this.getSpeed() + (Math.random() * 10));
     }
 
-    public boolean isCrit(){
-        return false;
+    public void takingDamage(double damage){
+        this.setHealthPoints(this.getHealthPoints() - damage);
+        System.out.println(this.getName() + " maradék élete: " + this.getHealthPoints());
     }
 
-    public boolean isAvoid(){
-        return false;
-    }
-
-    public boolean isShield(){
-        return false;
+    public double dealingDamage(){
+        System.out.println(this.getName() + " ütött! Sebzése: " + this.getDamagePoints());
+        return this.getDamagePoints();
     }
 
     public String getName() {
