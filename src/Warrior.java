@@ -1,6 +1,6 @@
 public class Warrior extends Fighter{
     private static final double critMultiplier = 2;
-    private int critChance;
+    private final int critChance;
 
     public Warrior(String name, int healthPoints, int damagePoints, int speed, int critChance) {
         super(name, healthPoints, damagePoints, speed);
@@ -15,7 +15,7 @@ public class Warrior extends Fighter{
     public int dealingDamage() {
         if (isCrit()){
             System.out.println(this.getName() + " kritikusat ütött! Sebzése: " +
-                    (this.getDamagePoints() * critMultiplier));
+                    (int)(this.getDamagePoints() * critMultiplier));
             return (int)(this.getDamagePoints() * critMultiplier);
         }
         return super.dealingDamage();
@@ -30,9 +30,4 @@ public class Warrior extends Fighter{
     public int getCritChance() {
         return critChance;
     }
-
-    public void setCritChance(int critChance) {
-        this.critChance = critChance;
-    }
-
 }
