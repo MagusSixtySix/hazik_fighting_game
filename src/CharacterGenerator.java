@@ -11,6 +11,10 @@ public class CharacterGenerator {
         }
     }
 
+    public static IFighter getDummyFighter(){
+        return new Fighter("Dummy", 0, 0, 0);
+    }
+
     private static Warrior createWarrior(String name) {
         return  new Warrior(createFighter(name), (int) (Math.random() * 100));
     }
@@ -20,11 +24,11 @@ public class CharacterGenerator {
     }
 
     private static Mage createMage(String name) {
-        return new Mage(createFighter(name), (int) (Math.random() * 100));
+        return new Mage(createFighter(name), (int) (Math.random() * 10 + 5));
     }
 
     private static Fighter createFighter(String name){
-        return new Fighter(name, (int) (100 + Math.random() * 1000), (int) (Math.random() * 100 + 1),
+        return new Fighter(name, (int) (100 + Math.random() * 100), (int) (Math.random() * 10 + 10),
                 (int) (Math.random() * 10));
     }
 }

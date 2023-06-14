@@ -4,7 +4,7 @@ public class Mage extends Fighter {
     private final int magicShield;
 
     public Mage(Fighter fighter, int magicShield){
-        super(fighter.getName(), fighter.getHealthPoints(), fighter.getDamagePoints(), fighter.getSpeed());
+        super(fighter.getName(), fighter.getMaxHealthPoints(), fighter.getDamagePoints(), fighter.getSpeed());
         this.magicShield = magicShield;
     }
 
@@ -15,14 +15,14 @@ public class Mage extends Fighter {
     @Override
     public void takingDamage(int damage) {
         if (isMagicShield()){
-            this.setHealthPoints (this.getHealthPoints() - (damage - this.getMagicShield()));
+            this.setCurrentHealthPoints(this.getCurrentHealthPoints() - (damage - this.getMagicShield()));
             System.out.print(this.getName() + " varázslatával részlegesen blokkolta az ütést, ezért " +
                             this.getMagicShield() + " ponttal kevesebbet sérült! ");
         } else {
-        this.setHealthPoints(this.getHealthPoints() - damage);
+        this.setCurrentHealthPoints(this.getCurrentHealthPoints() - damage);
         }
         if (this.isAlive()){
-            System.out.println(this.getName() + " maradék élete: " + this.getHealthPoints());
+            System.out.println(this.getName() + " maradék élete: " + this.getCurrentHealthPoints());
         } else {
         System.out.println(this.getName() + " meghalt!");
         }

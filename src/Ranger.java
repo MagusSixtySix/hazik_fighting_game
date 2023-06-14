@@ -3,7 +3,7 @@ public class Ranger extends Fighter {
     private final int avoidChance;
 
     public Ranger(Fighter fighter, int avoidChance){
-        super(fighter.getName(), fighter.getHealthPoints(), fighter.getDamagePoints(), fighter.getSpeed());
+        super(fighter.getName(), fighter.getMaxHealthPoints(), fighter.getDamagePoints(), fighter.getSpeed());
         this.avoidChance = avoidChance;
     }
 
@@ -16,10 +16,10 @@ public class Ranger extends Fighter {
         if (isAvoid()){
             System.out.print(this.getName() + " elugrott az ütés elől! ");
         } else {
-        this.setHealthPoints(this.getHealthPoints() - damage);
+        this.setCurrentHealthPoints(this.getCurrentHealthPoints() - damage);
         }
         if (this.isAlive()){
-            System.out.println(this.getName() + " maradék élete: " + this.getHealthPoints());
+            System.out.println(this.getName() + " maradék élete: " + this.getCurrentHealthPoints());
         } else{
         System.out.println(this.getName() + " meghalt!");
         }

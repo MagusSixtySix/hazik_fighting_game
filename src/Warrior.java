@@ -3,7 +3,7 @@ public class Warrior extends Fighter{
     private final int critChance;
 
     public Warrior(Fighter fighter, int critChance){
-        super(fighter.getName(), fighter.getHealthPoints(), fighter.getDamagePoints(), fighter.getSpeed());
+        super(fighter.getName(), fighter.getMaxHealthPoints(), fighter.getDamagePoints(), fighter.getSpeed());
         this.critChance = critChance;
     }
 
