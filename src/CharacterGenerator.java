@@ -12,17 +12,19 @@ public class CharacterGenerator {
     }
 
     private static Warrior createWarrior(String name) {
-        return  new Warrior(name, (int) (100 + Math.random() * 1000), (int) (Math.random() * 100 + 1),
-                (int) (Math.random() * 10), (int) (Math.random() * 100));
+        return  new Warrior(createFighter(name), (int) (Math.random() * 100));
     }
 
     private static Ranger createRanger(String name) {
-        return new Ranger(name, (int) (100 + Math.random() * 1000), (int) (Math.random() * 100 + 1),
-                (int) (Math.random() * 10), (int) (Math.random() * 100));
+        return new Ranger(createFighter(name), (int) (Math.random() * 100));
     }
 
     private static Mage createMage(String name) {
-        return new Mage(name, (int) (100 + Math.random() * 1000), (int) (Math.random() * 100 + 1),
-                (int) (Math.random() * 10), (int) (Math.random() * 100));
+        return new Mage(createFighter(name), (int) (Math.random() * 100));
+    }
+
+    private static Fighter createFighter(String name){
+        return new Fighter(name, (int) (100 + Math.random() * 1000), (int) (Math.random() * 100 + 1),
+                (int) (Math.random() * 10));
     }
 }

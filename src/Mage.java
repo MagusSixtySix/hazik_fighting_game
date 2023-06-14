@@ -1,10 +1,10 @@
 public class Mage extends Fighter {
 
     private final double magicShieldChance = 0.35;
-    private int magicShield;
+    private final int magicShield;
 
-    public Mage(String name, int healthPoints, int damagePoints, int speed, int magicShield) {
-        super(name, healthPoints, damagePoints, speed);
+    public Mage(Fighter fighter, int magicShield){
+        super(fighter.getName(), fighter.getHealthPoints(), fighter.getDamagePoints(), fighter.getSpeed());
         this.magicShield = magicShield;
     }
 
@@ -37,9 +37,4 @@ public class Mage extends Fighter {
     public int getMagicShield() {
         return magicShield;
     }
-
-    public void setMagicShield(int magicShield) {
-        this.magicShield = magicShield;
-    }
-
 }

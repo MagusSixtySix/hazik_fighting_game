@@ -2,8 +2,8 @@ public class Warrior extends Fighter{
     private static final double critMultiplier = 2;
     private final int critChance;
 
-    public Warrior(String name, int healthPoints, int damagePoints, int speed, int critChance) {
-        super(name, healthPoints, damagePoints, speed);
+    public Warrior(Fighter fighter, int critChance){
+        super(fighter.getName(), fighter.getHealthPoints(), fighter.getDamagePoints(), fighter.getSpeed());
         this.critChance = critChance;
     }
 
