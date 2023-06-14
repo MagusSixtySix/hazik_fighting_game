@@ -5,10 +5,10 @@ public class Fight {
         player1.printStats();
         player2.printStats();
         while (bothAlive(player1, player2)) {
-            System.out.println("------------ " + round++ + ". kör! ------------");
+            System.out.println("------------ " + round++ + ". kör ------------");
             battlePhase(player1, player2);
         }
-        return checkVictor(player1, player2);
+        return checkLoser(player1, player2);
     }
 
     private void battlePhase(IFighter player1, IFighter player2) {
@@ -26,7 +26,7 @@ public class Fight {
         }
     }
 
-    private IFighter checkVictor(IFighter player1, IFighter player2){
+    private IFighter checkLoser(IFighter player1, IFighter player2){
         if (player1.isAlive()) {
             printVictor(player1);
             return player2;
@@ -37,7 +37,8 @@ public class Fight {
     }
 
     private void printVictor(IFighter player) {
-        System.out.println(player.getName() + " nyerte a küzdelmet! " + player.getCurrentHealthPoints() + " élete maradt!");
+        System.out.println(player.getName() + " nyerte a küzdelmet! " + player.getCurrentHealthPoints() +
+                " élete maradt!");
     }
 
     private boolean bothAlive(IFighter player1, IFighter player2) {

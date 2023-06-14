@@ -52,7 +52,7 @@ public class Fighter implements IFighter {
 
     @Override
     public void printStats(){
-        System.out.print(this.getName() + " egy " + this.getClass().getSimpleName() + " akinek " +
+        System.out.print(this.getName() + " akinek " +
                 this.getCurrentHealthPoints() + " élete, " + this.getDamagePoints() + " sebzése, " +
                 this.getSpeed() + " gyorsasága, ");
     }
