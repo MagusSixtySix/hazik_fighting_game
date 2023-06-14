@@ -27,7 +27,7 @@ public class CharacterGenerator {
     }
 
     private static Mage createMage(String name) {
-        return new Mage(createFighter(name), (int) (Math.random() * 10 + 5));
+        return new Mage(createFighter(name), (int) (Math.random() * 10 + 7));
     }
 
     private static Fighter createFighter(String name){
