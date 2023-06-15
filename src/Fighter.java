@@ -1,7 +1,6 @@
 public class Fighter implements IFighter {
 
     private final String name;
-
     private final int maxHealthPoints;
     private int currentHealthPoints;
     private final int damagePoints;
