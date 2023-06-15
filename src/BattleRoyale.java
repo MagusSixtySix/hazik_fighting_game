@@ -27,7 +27,7 @@ public class BattleRoyale {
     }
 
     private void printChampion() {
-        System.out.print("\nA GYŐZTES!: ");
+        System.out.print("\nA GYŐZTES: ");
         fighterList.get(0).printStats();
     }
 }

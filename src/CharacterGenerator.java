@@ -15,20 +15,20 @@ public class CharacterGenerator {
     }
 
     private static Warrior createWarrior(String name) {
-        return new Warrior(createFighter(name), (int) (Math.random() * 100));
+        return new Warrior(createFighter(name), (int) ((Math.random() * (70 - 10)) + 10));
     }
 
     private static Ranger createRanger(String name) {
-        return new Ranger(createFighter(name), (int) (Math.random() * 100));
+        return new Ranger(createFighter(name), (int) ((Math.random() * (45 - 10)) + 10));
     }
 
     private static Mage createMage(String name) {
-        return new Mage(createFighter(name), (int) (Math.random() * 10 + 7));
+        return new Mage(createFighter(name), (int) ((Math.random() * (15 - 5)) + 5));
     }
 
     private static Fighter createFighter(String name) {
-        return new Fighter(name, (int) (100 + Math.random() * 100), (int) (Math.random() * 10 + 10),
-                (int) (Math.random() * 10 + 1));
+        return new Fighter(name, (int) ((Math.random() * (200 - 100)) + 100), (int) ((Math.random() * (20 - 10)) + 10),
+                (int) ((Math.random() * (10 - 1)) + 1));
     }
 
     private static String getRandomID() {

@@ -28,12 +28,12 @@ public class Duel {
 
     private static IFighter checkLoser(IFighter player1, IFighter player2) {
         if (player1.isAlive()) {
-            player1.healDamage();
             printVictor(player1);
+            player1.healDamage();
             return player2;
         } else {
-            player2.healDamage();
             printVictor(player2);
+            player2.healDamage();
             return player1;
         }
     }
