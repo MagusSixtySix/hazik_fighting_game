@@ -14,20 +14,21 @@ public class Fighter implements IFighter {
         this.damagePoints = damagePoints;
         this.speed = speed;
     }
+
     @Override
-    public boolean isAlive(){
+    public boolean isAlive() {
         return (this.getCurrentHealthPoints() > 0);
     }
 
     @Override
-    public int initiative(){
+    public int initiative() {
         return (int) (this.getSpeed() + (Math.random() * 10));
     }
 
     @Override
-    public void takingDamage(int damage){
+    public void takingDamage(int damage) {
         this.setCurrentHealthPoints(this.getCurrentHealthPoints() - damage);
-        if (this.isAlive()){
+        if (this.isAlive()) {
             this.printHealtPoints();
         } else {
             this.printDead();
@@ -35,23 +36,23 @@ public class Fighter implements IFighter {
     }
 
     @Override
-    public int dealingDamage(){
+    public int dealingDamage() {
         System.out.println(this.getName() + " ütött! Sebzése: " + this.getDamagePoints());
         return this.getDamagePoints();
     }
 
     @Override
-    public void printHealtPoints(){
+    public void printHealtPoints() {
         System.out.println(this.getName() + " maradék élete: " + this.getCurrentHealthPoints());
     }
 
     @Override
-    public void printDead(){
+    public void printDead() {
         System.out.println(this.getName() + " meghalt!");
     }
 
     @Override
-    public void printStats(){
+    public void printStats() {
         System.out.print(this.getName() + " akinek " +
                 this.getCurrentHealthPoints() + " élete, " + this.getDamagePoints() + " sebzése, " +
                 this.getSpeed() + " gyorsasága, ");
@@ -88,7 +89,7 @@ public class Fighter implements IFighter {
     }
 
     @Override
-    public void healDamage(){
+    public void healDamage() {
         this.currentHealthPoints = this.maxHealthPoints;
     }
 }
