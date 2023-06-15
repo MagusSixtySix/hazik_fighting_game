@@ -1,5 +1,5 @@
 public class Game {
     public static void main(String[] args) {
-        BattleRoyale.startBattle(10);
+        BattleRoyale.startBattle(6);
     }
 }
