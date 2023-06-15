@@ -1,5 +1,6 @@
 public class Game {
     public static void main(String[] args) {
-        BattleRoyale.startBattle(6);
+        BattleRoyale tournament = new BattleRoyale(6);
+        tournament.startBattle();
     }
 }
